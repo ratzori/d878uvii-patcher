@@ -47,12 +47,6 @@ Notes:
 - Only *Side Key Lock* is checked. *Forced Key Lock* on its own doesn't block PTT.
 - VOX works as in stock firmware.
 
-Known issues:
-- If you press Menu and then PTT while the keys are locked, the radio shows
-  "Push * To Unlock Key" instead of "Key Locked", though with the same "!"
-  icon as "Key Locked". This is only the message text and is harmless: PTT
-  is still blocked.
-
 ### `--usb-fix`: USB serial port works after the boot password
 
 In stock firmware, if a boot password is set, the PC loses the radio's USB

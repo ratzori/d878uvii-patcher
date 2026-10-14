@@ -20,6 +20,6 @@ The `.CDD` SHA-256 is:
 
 | Patches | Output `.CDD` SHA-256 | Tested on a radio |
 |---|---|---|
-| `--ptt-lock` | `fb9c18bff1d5773cf7c94091f439a455387aedc50dd59301c148c74088df9c16` | yes |
+| `--ptt-lock` | `bc2b34657ebb111ed9ead81fa821ff3193fb0fd59d57c0e88bf7f5713898cab1` | not yet |
 | `--usb-fix` | `6156829b90aaf60312a479f176f417e3fe0f1ca6001c45bcec88657e390b43be` | yes |
-| `--ptt-lock --usb-fix` | `d95f47a3d580224977bb8b583656e4831d9f1d1994391c3f0f3c45729080c1a8` | yes |
+| `--ptt-lock --usb-fix` | `64223c63d1829135ec92d5ce8c2fba425fb52a915d6742899885629d1adc0316` | yes |

@@ -6,13 +6,16 @@ NEEDS = (
     "STARTED",           # 1 once start-up has finished
     "SETTINGS",          # general settings from the codeplug
     "KEYLOCK_ON",        #   offset: key lock currently engaged
+    "LANGUAGE",          #   offset: display language
     "LOCK_OPTIONS",      #   offset: lock options
     "SIDE_KEY_LOCK",     #   lock options bit: Side Key Lock
     "BUTTONS",           # button-state byte
     "PTT",               #   bit: PTT
     "KEY_LOCKED_SHOWN",  #   bit unused by stock: message already shown for this press
     "SHOW_MESSAGE",      # shows a status message
+    "MESSAGE_TEXT",      #   text it shows, set by the caller
     "MSG_KEY_LOCKED",    #   message: "Key Locked"
+    "KEY_LOCKED_TEXT",   #   its text, one 8-byte entry per language
     "PTT_HOOK",          # where the button-state byte is stored
     "PTT_RESUME",        # the instruction after it
     "PTT_LOCK_CODE",     # free space for this patch's code
@@ -47,6 +50,15 @@ def place(s):
         and  r3, r3, #{s.KEY_LOCKED_SHOWN}
         cbnz r3, relatch
         push {{r0, r4, lr}}
+        movw r3, #{lo(s.SETTINGS)}
+        movt r3, #{hi(s.SETTINGS)}
+        ldrb r3, [r3, #{s.LANGUAGE}]
+        movw r2, #{lo(s.KEY_LOCKED_TEXT)}
+        movt r2, #{hi(s.KEY_LOCKED_TEXT)}
+        ldr.w r2, [r2, r3, lsl #3]
+        movw r3, #{lo(s.MESSAGE_TEXT)}
+        movt r3, #{hi(s.MESSAGE_TEXT)}
+        str  r2, [r3]
         movs r0, #{s.MSG_KEY_LOCKED}
         bl   {s.SHOW_MESSAGE}
         pop  {{r0, r4, lr}}
