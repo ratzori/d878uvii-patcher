@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+
+# Never commit firmware, stock or patched
+patched/
+*.[cC][dD][dD]
+*.[sS][pP][iI]
+*.[cC][dD][iI]
+*.[zZ][iI][pP]
+*.[rR][aA][rR]
+*.7[zZ]

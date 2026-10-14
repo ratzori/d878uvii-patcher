@@ -1,0 +1,7 @@
+*
+!requirements.txt
+!d878uvii_patcher.py
+!firmware/
+!patches/
+firmware/__pycache__
+patches/__pycache__
